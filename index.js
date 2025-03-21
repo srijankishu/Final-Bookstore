@@ -12,7 +12,9 @@ import purchaseRoute from "./routes/purchase.route.js";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 4001 ;
+dbConnect();
+
+const PORT = process.env.PORT || 4001;
 
 const app = express() ;
 app.use(cors());
@@ -33,8 +35,5 @@ app.use("/user/", userRoute);
 app.use("/purchase",purchaseRoute);
 
 
-app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`);
-    dbConnect();
-})
+export default app;
 
