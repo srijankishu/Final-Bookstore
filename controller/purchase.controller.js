@@ -110,7 +110,7 @@ export const DeletePurchasedBook = async (req, res) => {
         if (!mongoose.isValidObjectId(bookId)) {
             return res.status(400).json({ message: "Invalid Book ID format" });
         }
-       // console.log(bookId);
+        console.log(bookId);
         
         // Delete the purchase entry associated with the bookId
         const deletedPurchase = await Purchase.findOneAndDelete({ bookId });
